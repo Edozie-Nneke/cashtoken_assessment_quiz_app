@@ -43,7 +43,7 @@ export default function Questions({ onTimeElapsed }) {
     return () => {
       clearInterval(interval);
     };
-  }, []);
+  }, [onTimeElapsed]);
 
   return (
     <div className='countdownTimer'>

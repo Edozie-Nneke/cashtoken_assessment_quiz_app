@@ -14,6 +14,7 @@ export default function Score({ myScore, lengthOfQuiz }) {
           <>
             <iframe
               src='https://giphy.com/embed/MZudgiwXiLJHPV9x73'
+              title='jsx-a11y/iframe-has-title'
               width='350'
               height='300'
               frameBorder='0'
@@ -27,6 +28,7 @@ export default function Score({ myScore, lengthOfQuiz }) {
           <>
             <iframe
               src='https://giphy.com/embed/Qw1gB1YFU91xpTm49w'
+              title='jsx-a11y/iframe-has-title'
               width='350'
               height='300'
               frameBorder='0'
