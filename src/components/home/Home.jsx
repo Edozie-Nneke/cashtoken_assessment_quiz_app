@@ -7,7 +7,7 @@ export default function Home() {
     <div className='home'>
       <div className='home-wrapper'>
         <p>Oops!, You are not logged in</p>
-        <a href='http://localhost:3000/auth/snapchat'>
+        <a href='https://young-harbor-91025.herokuapp.com/auth/snapchat'>
           <div className='snap-logo-btn'>
             <div className='logo-img'>
               <img src={image} alt='snap-logo' />
