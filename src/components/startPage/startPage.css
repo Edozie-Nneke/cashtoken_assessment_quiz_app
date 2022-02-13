@@ -28,6 +28,31 @@ header img:first-child {
   object-fit: cover;
 }
 
+.profile {
+  width: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.profile button {
+  width: 32%;
+  height: 24px;
+  font-size: 10px;
+  background: #222831;
+  color: #eeeeee;
+  border: none;
+  outline: none;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 14px;
+}
+
+.profile span {
+  font-weight: 600;
+  font-size: 10px;
+}
+
 header img:last-child {
   width: 38px;
   height: 38px;
@@ -102,12 +127,17 @@ header img:last-child {
   margin-top: 180px;
   font-weight: 400;
   font-size: 16px;
+  /* border: 1px solid black; */
 }
 
 .startpage-btn-wrapper h4 {
   font-size: 18px;
+  /* border: 1px solid black; */
+  margin-left: 20px;
 }
+
 .startpage-btn-wrapper button {
+  margin-left: 460px;
   font-size: 18px;
   width: 150px;
   height: 38px;
@@ -118,6 +148,7 @@ header img:last-child {
   background: #222831;
   cursor: pointer;
   transition: all 0.3s ease-in;
+  /* border: 1px solid black; */
 }
 
 .startpage-btn-wrapper button:hover {

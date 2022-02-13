@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './countdownTimer.css';
 
-export default function Questions({ onTimeElapsed }) {
+export default function CountdownTimer({ onTimeElapsed }) {
   const [minutes, setMinutes] = useState('00');
   const [seconds, setSeconds] = useState('00');
   const [showMyScore, setShowMyScore] = useState(false);
@@ -30,7 +30,7 @@ export default function Questions({ onTimeElapsed }) {
           setMinutes(minutes < 10 ? `0${minutes}` : minutes);
           setSeconds(seconds < 10 ? `0${seconds}` : seconds);
 
-          if (minutes === 0 && seconds === 0) {
+          if ((minutes === 0 && seconds === 0) || showMyScore === true) {
             setShowMyScore(true);
             onTimeElapsed(true);
           }
@@ -43,7 +43,7 @@ export default function Questions({ onTimeElapsed }) {
     return () => {
       clearInterval(interval);
     };
-  }, [onTimeElapsed]);
+  }, [onTimeElapsed, showMyScore]);
 
   return (
     <div className='countdownTimer'>

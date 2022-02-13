@@ -3,17 +3,14 @@ import { Link } from 'react-router-dom';
 import './score.css';
 
 export default function Score({ myScore, lengthOfQuiz }) {
-  const handleBackToStart = () => {
-    //send result to an API
-    //Take user back to the home page
-  };
+  const handleBackToStart = () => {};
   return (
     <div className='score-wrapper'>
       {myScore <= 5 ? (
         <div className='progress-bar'>
           <>
             <iframe
-              src='https://giphy.com/embed/MZudgiwXiLJHPV9x73'
+              src='https://giphy.com/embed/MWs9L7oKYg8I1GoJtE'
               title='jsx-a11y/iframe-has-title'
               width='350'
               height='300'
@@ -27,12 +24,12 @@ export default function Score({ myScore, lengthOfQuiz }) {
         <div className='progress-bar'>
           <>
             <iframe
-              src='https://giphy.com/embed/Qw1gB1YFU91xpTm49w'
+              src='https://giphy.com/embed/fDbzXb6Cv5L56'
               title='jsx-a11y/iframe-has-title'
               width='350'
               height='300'
               frameBorder='0'
-              className='giphy-embed'
+              class='giphy-embed'
               allowFullScreen
             ></iframe>
           </>
@@ -48,7 +45,7 @@ export default function Score({ myScore, lengthOfQuiz }) {
         <p>Thank you for playing.</p>
       </section>
       <div className='score-btn-wrapper'>
-        <Link to='/callback'>
+        <Link to='/startpage'>
           <button onClick={() => handleBackToStart}>Play again?</button>
         </Link>
       </div>

@@ -15,12 +15,6 @@ export default function Questions({ categoryLevel, difficultyLevel }) {
   };
 
   const handleAnswerClick = choosenAnswer => {
-    console.log(
-      'Correct Answer: ',
-      quiz[currentQuestion].correct_answer,
-      'Choose Answer: ',
-      choosenAnswer
-    );
     if (choosenAnswer === quiz[currentQuestion].correct_answer) {
       setScore(score + 1);
     }
@@ -52,8 +46,6 @@ export default function Questions({ categoryLevel, difficultyLevel }) {
       const result = await response.data;
 
       setQuiz(result);
-
-      console.log(result);
     };
 
     fetchQuestions();

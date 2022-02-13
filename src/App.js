@@ -27,7 +27,7 @@ export default function App() {
         <Routes>
           <Route path='/' element={<Home />} />
           <Route
-            path='/callback'
+            path='/startpage'
             element={
               <StartPage
                 handleDifficultyChange={handleDifficultyChange}

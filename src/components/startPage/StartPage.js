@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './startPage.css';
 import logo from '../../assets/cta-logo.png';
-import avatar from '../../assets/avatar.jpg';
+import avatarImg from '../../assets/avatar.jpg';
 
 export default function StartPage({
   handleCategoryChange,
@@ -10,13 +10,26 @@ export default function StartPage({
   difficulty,
   category,
 }) {
+  const queryParams = new URLSearchParams(window.location.search);
+  const name = queryParams.get('name');
+  const avatar = queryParams.get('avatar');
+  const accessToken = queryParams.get('accessToken');
+
+  useEffect(() => {
+    localStorage.setItem('accessToken', accessToken);
+  }, [accessToken]);
+
   return (
     <div className='startpage-container'>
       <section className='startpage-wrapper'>
         <header>
           <img src={logo} alt='logo' />
           <h1>Welcome to Cashtoken quiz app</h1>
-          <img src={avatar} alt='avatar' />
+          <div className='profile'>
+            <span>{name}</span>
+            {name && <button>Logout</button>}
+            <img src={avatar || avatarImg} alt='avatar' />
+          </div>
         </header>
         <div className='startpage-settings-wrapper'>
           <div className='random'>
