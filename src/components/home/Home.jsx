@@ -1,9 +1,12 @@
 import React from 'react';
+import { Navigate } from 'react-router-dom';
 import image from '../../assets/snap-logo.png';
 import './home.css';
 
-export default function Home() {
-  return (
+export default function Home({ user }) {
+  return user ? (
+    <Navigate to='/startpage' replace />
+  ) : (
     <div className='home'>
       <div className='home-wrapper'>
         <p>Oops!, You are not logged in</p>

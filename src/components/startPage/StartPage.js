@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import './startPage.css';
 import logo from '../../assets/cta-logo.png';
 import avatarImg from '../../assets/avatar.jpg';
+import axios from 'axios';
 
 export default function StartPage({
   handleCategoryChange,
@@ -13,6 +14,12 @@ export default function StartPage({
   image,
   token,
 }) {
+  const logout = async () => {
+    await axios.get('https://young-harbor-91025.herokuapp.com/logout');
+
+    window.location.href('/');
+  };
+
   useEffect(() => {
     localStorage.setItem('accessToken', token);
   }, [token]);
@@ -25,7 +32,7 @@ export default function StartPage({
           <h1>Welcome to Cashtoken quiz app</h1>
           <div className='profile'>
             <span>{username}</span>
-            {username && <button>Logout</button>}
+            {username && <button onClick={logout}>Logout</button>}
             <img src={image || avatarImg} alt='avatar' />
           </div>
         </header>

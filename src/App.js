@@ -25,11 +25,14 @@ export default function App() {
     console.log(difficulty, category);
   };
 
+  console.log(name);
+
   return (
     <div style={appStyle}>
       <BrowserRouter>
         <Routes>
-          {!name && <Route path='/' element={<Home />} />}
+          <Route path='/' element={<Home user={name} />} />
+
           <Route
             path='/startpage'
             element={
@@ -43,6 +46,7 @@ export default function App() {
               />
             }
           />
+
           <Route
             path='/questions'
             element={
