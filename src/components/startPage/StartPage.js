@@ -9,15 +9,13 @@ export default function StartPage({
   handleDifficultyChange,
   difficulty,
   category,
+  username,
+  image,
+  token,
 }) {
-  const queryParams = new URLSearchParams(window.location.search);
-  const name = queryParams.get('name');
-  const avatar = queryParams.get('avatar');
-  const accessToken = queryParams.get('accessToken');
-
   useEffect(() => {
-    localStorage.setItem('accessToken', accessToken);
-  }, [accessToken]);
+    localStorage.setItem('accessToken', token);
+  }, [token]);
 
   return (
     <div className='startpage-container'>
@@ -26,9 +24,9 @@ export default function StartPage({
           <img src={logo} alt='logo' />
           <h1>Welcome to Cashtoken quiz app</h1>
           <div className='profile'>
-            <span>{name}</span>
-            {name && <button>Logout</button>}
-            <img src={avatar || avatarImg} alt='avatar' />
+            <span>{username}</span>
+            {username && <button>Logout</button>}
+            <img src={image || avatarImg} alt='avatar' />
           </div>
         </header>
         <div className='startpage-settings-wrapper'>

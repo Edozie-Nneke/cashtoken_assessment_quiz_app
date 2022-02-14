@@ -7,6 +7,10 @@ import Home from './components/home/Home';
 export default function App() {
   const [difficulty, setDifficulty] = useState('');
   const [category, setCategory] = useState('');
+  const queryParams = new URLSearchParams(window.location.search);
+  const name = queryParams.get('name');
+  const avatar = queryParams.get('avatar');
+  const accessToken = queryParams.get('accessToken');
 
   const handleDifficultyChange = event => {
     setDifficulty(event.target.value);
@@ -25,11 +29,14 @@ export default function App() {
     <div style={appStyle}>
       <BrowserRouter>
         <Routes>
-          <Route path='/' element={<Home />} />
+          {!name && <Route path='/' element={<Home />} />}
           <Route
             path='/startpage'
             element={
               <StartPage
+                username={name}
+                image={avatar}
+                token={accessToken}
                 handleDifficultyChange={handleDifficultyChange}
                 handleCategoryChange={handleCategoryChange}
                 startQuiz={startQuiz}
